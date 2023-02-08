@@ -17,7 +17,7 @@ class Solution:
             hashmap[nums[i]] = i
 
 
-'''
+"""
 --------------------
 --- TIME -----------
 --- O(n^2) -3858ms--
@@ -32,3 +32,4 @@ class Solution:
                 if nums[i] + nums[j] == target:
                     return [i, j]
         return [0, 0]
+"""
