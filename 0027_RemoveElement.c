@@ -13,6 +13,33 @@
  * It does not matter what you leave beyond the first k elements.
 */
 int removeElement(int* nums, int numsSize, int val){
+    int i, j, temp, count = 0;
+
+    for (i = 0, j = 0; i < numsSize; i++)
+    {
+        if (nums[i] == val)
+        {
+            count++;
+        }
+        if (nums[i] != val)
+        {
+            temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            j++;
+        }
+    }
+    return (numsSize - count);
+}
+
+
+
+
+
+
+/* Initial thought
+
+int removeElement(int* nums, int numsSize, int val){
     int i, j, delete, count = 0;
 
     for (i = 0; i < numsSize; i++)
