@@ -12,49 +12,14 @@
  * then the first k elements of nums should hold the final result. 
  * It does not matter what you leave beyond the first k elements.
 */
-int removeElement(int* nums, int numsSize, int val){
-    int i, j, temp, count = 0;
-
-    for (i = 0, j = 0; i < numsSize; i++)
+int removeElement(int* nums, int numsSize, int val)
+{
+    int i, count = 0;
+    
+    for (i = 0; i < numsSize; i++) 
     {
-        if (nums[i] == val)
-        {
-            count++;
-        }
         if (nums[i] != val)
-        {
-            temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-            j++;
-        }
+            nums[count++] = nums[i];
     }
-    return (numsSize - count);
-}
-
-
-
-
-
-
-/* Initial thought
-
-int removeElement(int* nums, int numsSize, int val){
-    int i, j, delete, count = 0;
-
-    for (i = 0; i < numsSize; i++)
-        if (nums[i] == val)
-            count++;
-
-    for (i = 0; i < numsSize; i++)
-    {
-        while (nums[i] == val)
-        {
-            for (j = i; j < numsSize-1; j++)
-                nums[j] = nums[j+1];
-
-            nums[j] = '_';
-        }
-    }
-    return (numsSize - count);
+    return (count);
 }
